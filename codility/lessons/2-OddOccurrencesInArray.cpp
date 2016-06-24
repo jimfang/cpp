@@ -19,29 +19,16 @@ int solution_OddOccurrencesInArray(vector<int> &A) {
         return A.front();
     }
 
-    vector<int> B;
     vector<int>::iterator it_a = A.begin();
-    for(; it_a!=A.end(); it_a++)
+    vector<int>::iterator it_end = A.end();
+    sort(it_a, it_end);
+    for(; it_a != it_end; it_a++)
     {
-        // if appear in B
-        vector<int>::iterator it_b = find(B.begin(), B.end(), *it_a);
-        if(it_b != B.end())
-        {
-            continue;
-        }
 
-        // not appeared, count
-        int num = count(it_a, A.end(), *it_a);
-
-        if(num%2==0)
-        {
-            B.push_back(*it_a);
-        }
+        if(*it_a == *(it_a+1))
+            it_a++;
         else
-        {
             return *it_a;
-        }
-
     }
 
     // fail to find
@@ -58,6 +45,8 @@ int main()
 
     for (std::vector<int>::iterator it = A.begin(); it != A.end(); ++it)
         std::cout << ' ' << *it;
-    std::cout << "result = " << result << '\n';
+
+    std::cout<<endl;
+    std::cout << "result = " << result << endl;
     return 0;
 }
