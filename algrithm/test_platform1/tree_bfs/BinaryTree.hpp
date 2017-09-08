@@ -48,12 +48,23 @@ public:
     void SetRoot(Node<t> *node) { root_ = node; }
     Node<t> *GetRoot(void) { return root_; }
      
+    // left - root - right 
     void TraverseInOrder(Node<t> *node){
         
         if(node){                        
             TraverseInOrder(node->getLeft());
             std::cout << node->getValue() << std::endl;
             TraverseInOrder(node->getRight());
+        }
+    }
+    
+    // root - left - right 
+    void TraversePreOrder(Node<t> *node){
+        
+        if(node){                                    
+            std::cout << node->getValue() << std::endl;
+            TraversePreOrder(node->getLeft());
+            TraversePreOrder(node->getRight());
         }
     }
     
@@ -70,8 +81,6 @@ public:
             
             tree_queue.pop();
             
-            //std::cout << temp->getLeft() << std::endl;
-            //std::cout << temp->getRight() << std::endl;
             if (temp->getLeft())
                 tree_queue.push(temp->getLeft());
                 

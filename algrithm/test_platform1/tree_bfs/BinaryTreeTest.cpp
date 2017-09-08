@@ -35,6 +35,9 @@ void BinaryTreeTest<t>::Setup()
     testNodes_.push_back(n5);
     
     // set root node
+    //       0
+    //   1   |   2
+    // 3   4 | 5
     testTree_.SetRoot(n0);
 }
 
@@ -63,6 +66,7 @@ template<typename t>
 void BinaryTreeTest<t>::TestTravBF()
 {
     std::cout << "++ Test Breast First travel" << std::endl;    
+    std::cout << "++ expected: 0 1 2 3 4 5" << std::endl;    
     testTree_.TraverseBreadFirst();
 }
 
@@ -70,5 +74,6 @@ template<typename t>
 void BinaryTreeTest<t>::TestInOrder()
 {
     std::cout << "++ Test In Order travel" << std::endl;    
+    std::cout << "++ expected: 3 1 4 0 5 2" << std::endl;  
     testTree_.TraverseInOrder(testTree_.GetRoot());
 }

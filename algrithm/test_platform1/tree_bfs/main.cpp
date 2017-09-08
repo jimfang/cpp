@@ -9,8 +9,6 @@
 int main(int argc, char **argv)
 {
 
-	std::cout << "hello world" << std::endl;
-    
     BinaryTreeTest<int> testTree;
     testTree.Setup();
     
