@@ -4,3 +4,5 @@
 *.o
 algrithm/test_platform1/tree_bfs/Debug/tree_bfs.exe
 *.exe
+algrithm/test_platform1/tree_bfs/Debug/.d
+*.d

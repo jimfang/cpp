@@ -14,6 +14,9 @@ int main(int argc, char **argv)
     
     testTree.TestRoot();
     testTree.TestInOrder();
+    testTree.TestPreOrder();
+    testTree.TestPostOrder();
+    
     testTree.TestTravBF();
     
     testTree.TearDown();

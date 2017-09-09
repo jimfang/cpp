@@ -53,7 +53,7 @@ public:
         
         if(node){                        
             TraverseInOrder(node->getLeft());
-            std::cout << node->getValue() << std::endl;
+            std::cout << node->getValue() << " ";
             TraverseInOrder(node->getRight());
         }
     }
@@ -62,9 +62,19 @@ public:
     void TraversePreOrder(Node<t> *node){
         
         if(node){                                    
-            std::cout << node->getValue() << std::endl;
+            std::cout << node->getValue() << " ";
             TraversePreOrder(node->getLeft());
             TraversePreOrder(node->getRight());
+        }
+    }
+    
+    // left - right - root
+    void TraversePostOrder(Node<t> *node){
+        
+        if(node){                                    
+            TraversePostOrder(node->getLeft());
+            TraversePostOrder(node->getRight());
+            std::cout << node->getValue() << " ";            
         }
     }
     
@@ -77,7 +87,7 @@ public:
             
             Node<t> *temp = tree_queue.front();
             // cout
-            std::cout << (int)temp->getValue() << std::endl;
+            std::cout << (int)temp->getValue() << " ";
             
             tree_queue.pop();
             

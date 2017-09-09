@@ -16,7 +16,11 @@ public:
     void TestRoot();
     
     void TestTravBF();
+
     void TestInOrder();
+    void TestPreOrder();
+    void TestPostOrder();
+
 
 private:
     BinaryTree<t> testTree_;

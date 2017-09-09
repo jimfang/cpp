@@ -67,7 +67,10 @@ void BinaryTreeTest<t>::TestTravBF()
 {
     std::cout << "++ Test Breast First travel" << std::endl;    
     std::cout << "++ expected: 0 1 2 3 4 5" << std::endl;    
+    std::cout << "++  running: ";
     testTree_.TraverseBreadFirst();
+    std::cout << std::endl;    
+    std::cout << "+++++ test result: >>>>>>" << std::endl;  
 }
 
 template<typename t>
@@ -75,5 +78,30 @@ void BinaryTreeTest<t>::TestInOrder()
 {
     std::cout << "++ Test In Order travel" << std::endl;    
     std::cout << "++ expected: 3 1 4 0 5 2" << std::endl;  
+    std::cout << "++  running: ";
     testTree_.TraverseInOrder(testTree_.GetRoot());
+    std::cout << std::endl;    
+    std::cout << "+++++ test result: >>>>>>" << std::endl;  
+}
+
+template<typename t>
+void BinaryTreeTest<t>::TestPreOrder()
+{
+    std::cout << "++ Test Pre Order travel" << std::endl;    
+    std::cout << "++ expected: 0 1 3 4 2 5" << std::endl;  
+    std::cout << "++  running: ";
+    testTree_.TraversePreOrder(testTree_.GetRoot());
+    std::cout << std::endl;
+    std::cout << "+++++ test result: >>>>>>" << std::endl;  
+}
+
+template<typename t>
+void BinaryTreeTest<t>::TestPostOrder()
+{
+    std::cout << "++ Test Post Order travel" << std::endl;    
+    std::cout << "++ expected: 3 4 1 5 2 0" << std::endl;  
+    std::cout << "++  running: ";
+    testTree_.TraversePostOrder(testTree_.GetRoot());
+    std::cout << std::endl;    
+    std::cout << "+++++ test result: >>>>>>" << std::endl;  
 }
